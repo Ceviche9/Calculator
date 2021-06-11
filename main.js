@@ -70,7 +70,19 @@ class Calculadora {
 
                 console.log('Simbolo');
                 this.display.value += el.innerText;
-                this.sym = el.innerText;
+                this.sym += el.innerText;
+                console.log(this.sym);
+                flag = false;
+                console.log(flag);
+
+            }
+
+            if(el.classList.contains('btn-sym') && flag == false){
+
+                console.log('Simbolo no false');
+                this.result();
+                this.display.value += el.innerText;
+                this.sym += el.innerText;
                 console.log(this.sym);
                 flag = false;
                 console.log(flag);
@@ -129,7 +141,7 @@ class Calculadora {
                         this.n2 = Array.from(this.n2).slice(0,-1);
                         this.n2.toString();
 
-                        console.log('O valor de n1 agora é -> ' + this.n2);
+                        console.log('O valor de n2 agora é -> ' + this.n2);
                         return;
 
                     }
@@ -143,7 +155,22 @@ class Calculadora {
                         this.sym = Array.from(this.sym).slice(0,-1);
                         this.sym.toString();
 
-                        console.log('O valor de n1 agora é -> ' + this.sym);
+                        console.log('O valor de sym agora é -> ' + this.sym);
+                        console.log('Apaguei o ultimo valor e minha flag é ', flag)
+                        return;
+
+                    }
+
+                    else{
+
+                        console.log('Estou indo apagar o Symbol', flag)
+
+                        flag = true;    
+                        this.display.value = this.display.value.slice(0, -1);
+                        this.sym = Array.from(this.sym).slice(0,-1);
+                        this.sym.toString();
+
+                        console.log('O valor de sym agora é -> ' + this.sym);
                         console.log('Apaguei o ultimos valor e minha flag é ', flag)
                         return;
 
