@@ -102,13 +102,16 @@ class Calculadora {
             if(el.classList.contains('btn-del')) {
 
                 console.log('Vou apagar e a minha flag está', flag)
+
                 if(flag == true){
 
                     console.log('Estou dentro do true com a flag->', flag)
 
                     this.display.value = this.display.value.slice(0, -1);
-                    this.n1 = this.n1.slice(0,-1);
-                    console.log(this.n1)
+                    this.n1 = Array.from(this.n1).slice(0,-1);
+                    this.n1.toString();
+
+                    console.log('O valor de n1 agora é -> ' + this.n1);
                     return;
 
                 }
@@ -123,8 +126,10 @@ class Calculadora {
                         console.log('Estou indo apagar o n2->', flag)
 
                         this.display.value = this.display.value.slice(0, -1);
-                        this.n2 = this.n2.slice(0,-1);
-                        console.log(this.n2);
+                        this.n2 = Array.from(this.n2).slice(0,-1);
+                        this.n2.toString();
+
+                        console.log('O valor de n1 agora é -> ' + this.n2);
                         return;
 
                     }
@@ -135,22 +140,17 @@ class Calculadora {
 
                         flag = true;    
                         this.display.value = this.display.value.slice(0, -1);
-                        this.n1 = this.n1.slice(0,-1);
-                        console.log(this.n1);
+                        this.sym = Array.from(this.sym).slice(0,-1);
+                        this.sym.toString();
+
+                        console.log('O valor de n1 agora é -> ' + this.sym);
                         console.log('Apaguei o ultimos valor e minha flag é ', flag)
                         return;
 
                     }
 
-                   
-
                 }
-
-
-
             }
-
-            
 
         })
 
@@ -168,7 +168,8 @@ class Calculadora {
                 let n1 = Number(this.n1)
                 let n2 = Number(this.n2)
                 conta = n1 + n2
-                this.n1 = conta;
+                this.n1 = conta.toString();
+                console.log('Valor de n1 -> ' + this.n1);
                 this.n2 = '';
                 this.sym= '';
                 return this.display.value = conta;
@@ -181,7 +182,8 @@ class Calculadora {
                 let n1 = Number(this.n1)
                 let n2 = Number(this.n2)
                 conta = n1 - n2;
-                this.n1 = conta;
+                this.n1 = conta.toString();
+                console.log('Valor de n1 -> ' + this.n1);
                 this.n2 = '';
                 this.sym= '';
                 return this.display.value = conta;
@@ -194,7 +196,8 @@ class Calculadora {
                 let n1 = Number(this.n1)
                 let n2 = Number(this.n2)
                 conta = n1 * n2;
-                this.n1 = conta;
+                this.n1 = conta.toString();
+                console.log('Valor de n1 -> ' + this.n1);
                 this.n2 = '';
                 this.sym= '';
                 return this.display.value = conta;
@@ -206,7 +209,8 @@ class Calculadora {
                 let n1 = Number(this.n1)
                 let n2 = Number(this.n2)
                 conta = n1 / n2;
-                this.n1 = conta;
+                this.n1 = conta.toString();
+                console.log('Valor de n1 -> ' + this.n1);
                 this.n2 = '';
                 this.sym= '';
                 return this.display.value = conta;
