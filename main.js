@@ -74,6 +74,7 @@ class Calculadora {
                 console.log(this.sym);
                 flag = false;
                 console.log(flag);
+                return;
 
             }
 
@@ -86,6 +87,7 @@ class Calculadora {
                 console.log(this.sym);
                 flag = false;
                 console.log(flag);
+                return;
 
             }
 
